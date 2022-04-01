@@ -20,8 +20,16 @@ Aplicația este construită în jurul a 8 clase structurate pe domenii precum ut
       - clasa Events: detalii despre evenimentele susținute de biblioteci
  - pachetul Others:
       - clasa Address 
+      
 Pentru început, aplicația are următoarele funționalități:
  - adăugarea unui cititor(addReader)
  - adaugarea unei cărți în colecția bibliotecii (addBook)
  - adăugarea unui angajat în cadrul bibliotecii (addEmployee)
-   
+ - adăugarea unui eveniment în bibliotecă (addEvent)
+ - înființarea unei bibliteci (generateLibrary)
+ - împrumutarea unei cărți (borrowsBook)
+ - interogarea unui cititor despre cărțile împrumutate (borrowedBooks)
+ - afișarea cititorilor unei biblioteci împărțiti în cele 2 grupuri principale: Aduly și Student (showReaders)
+ - afișarea cărților dintr-o biblitoecă (showBooks)
+ - ordonarea cărților alfabetic (orderBooksAlfa)
+ - afișarea autorilor din colecția biblitecii (showAuthors)  
