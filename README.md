@@ -17,6 +17,7 @@
       - clasa Events
  - pachetul Others:
       - clasa Address
+ 
  Clasa OnlineLibrary reprezintă scheletul aplicației, fiind echivalentul unei biblioteci reale. În ea se vor regăsi detalii despre cititori (Adult & Student), cărțile disponibile (Books, prin care se include și clasa Author), personal (Personnel), evenimente viitoare (Events) și localizarea sediului fizic (Address), fiind totdoată și mediul de unde vor fi realizate interogările aplicației (prin serviciul său). 
  
 ### Interogări:
