@@ -1,9 +1,9 @@
-#Online Library - etapa I
+# Online Library - etapa I
 
-##Descriere
+## Descriere
  Online Library este o aplicație în Java creată cu scopul digitalizării bibliotecilor din România. 
  
-###Clase:
+### Clase:
  Aplicația este construită în jurul a 8 clase structurate pe domenii precum utilizatorilori, biblitecă și diverse :
  - pachetul People:
       - pachetul Readers: cele două tipuri de cititori
@@ -19,7 +19,7 @@
       - clasa Address
  Clasa OnlineLibrary reprezintă scheletul aplicației, fiind echivalentul unei biblioteci reale. În ea se vor regăsi detalii despre cititori (Adult & Student), cărțile disponibile (Books, prin care se include și clasa Author), personal (Personnel), evenimente viitoare (Events) și localizarea sediului fizic (Address), fiind totdoată și mediul de unde vor fi realizate interogările aplicației (prin serviciul său). 
  
-###Interogări:
+### Interogări:
  Pentru început, aplicația are următoarele funționalități:
  - adăugarea unui cititor(addReader)
  - adaugarea unei cărți în colecția bibliotecii (addBook)
@@ -33,7 +33,7 @@
  - ordonarea cărților alfabetic (orderBooksAlfa)
  - afișarea autorilor din colecția biblitecii (showAuthors)  
  
-##Obiective:
+## Obiective:
 
 Principalele obiective care se urmăresc prin implementarea acestui proiect sunt:
  - renunțarea la mediile de stocare învechite (registre, condici), prin trecerea către un mediu online de stocare, valabil la nivel național
