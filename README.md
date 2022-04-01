@@ -9,18 +9,19 @@ Principalele obiective care se urmăresc prin implementarea acestui proiect sunt
  
 Aplicația este construită în jurul a 8 clase structurate pe domenii precum utilizatorilori, biblitecă și diverse :
  - pachetul People:
-      - pachetul Readers:
+      - pachetul Readers: info privind utilizatorii
          - clasa Adult: utilizatori adulți (detalii despre job)
          - clasa Student: utilizatori elevi/studenți (detalii despre studiile urmate)
-     
- - clasa BasicInfo - superclasa cu informații de bază despre persoane
-   - subpachetul Readers - info privind utilizatori
-      - clasa Adult - utilizatorii adulți
-      - clasa Student - utilizatorii care sunt parte a unui ciclu de învățământ
-   - clasa Author - detalii despre autorii cărților
-   - to do: clasa Personal - detalii despre angajații bibliotecilor
- - clasa Book - definește cărțile
- - clasa Online Library - instanțiază bibliotecile online   
- - to do: clasa Adrres - instanțiază adresele
- - to do: clasa?
+      - clasa Authors: detalii autori
+      - clasa Personnel: detalii angajați biblitoecă
+ - pachetul Library: detalii despre organizarea bibliotecii
+      - clasa OnlineLibrary: prin ea se instanțiază bibliotecile cu toate cele necesare(users, cărți, personal etc.)
+      - clasa Books: detalii despre cărți
+      - clasa Events: detalii despre evenimentele susținute de biblioteci
+ - pachetul Others:
+      - clasa Address 
+Pentru început, aplicația are următoarele funționalități:
+ - adăugarea unui cititor(addReader)
+ - adaugarea unei cărți în colecția bibliotecii (addBook)
+ - adăugarea unui angajat în cadrul bibliotecii (addEmployee)
    
