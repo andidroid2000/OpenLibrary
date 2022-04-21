@@ -1,11 +1,11 @@
 package ro.onlinelibrary.comparators;
-import ro.onlinelibrary.library.Books;
+import ro.onlinelibrary.library.Book;
 
 import java.util.Comparator;
 
-public class NameComparator implements Comparator<Books> {
+public class NameComparator implements Comparator<Book> {
     @Override
-    public int compare(Books b1, Books b2)
+    public int compare(Book b1, Book b2)
     {
         return b1.getTitle().compareTo(b2.getTitle());
     }

@@ -3,6 +3,8 @@ package ro.onlinelibrary.people.readers;
 import ro.onlinelibrary.others.Address;
 import ro.onlinelibrary.people.BasicInfo;
 
+import java.util.Objects;
+
 public class Student extends BasicInfo {
     private String school;
     private int year;
@@ -14,14 +16,7 @@ public class Student extends BasicInfo {
         this.year = year;
         this.address = address;
     }
-    //accessors(getters) for first name, last name, school and year
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
+    //accessors(getters) for school and year
 
     public String getSchool() {
         return school;
@@ -31,14 +26,7 @@ public class Student extends BasicInfo {
         return year;
     }
 
-    //mutators(setters) for first name, last name,  school and year
-    public void setFirstName(String changedFirstName) {
-        this.firstName = changedFirstName;
-    }
-
-    public void setLastName(String changedLastName) {
-        this.lastName = changedLastName;
-    }
+    //mutators(setters) for school and year
 
     public void setSchool(String changedSchool) {
         this.school = changedSchool;
@@ -46,5 +34,29 @@ public class Student extends BasicInfo {
 
     public void setYear(int changedYear) {
         this.year = changedYear;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return year == student.year && school.equals(student.school) && address.equals(student.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(school, year, address);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", school='" + school + '\'' +
+                ", year=" + year +
+                ", address=" + address +
+                '}';
     }
 }

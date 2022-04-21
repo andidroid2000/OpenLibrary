@@ -17,14 +17,7 @@ public class Author extends BasicInfo {
         this.language = null;
     }
 
-    //accessors(getters) for first name, last name, employer company and job
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
+    //accessors(getters) for country and language
 
     public String getCountry() {
         return country;
@@ -34,14 +27,7 @@ public class Author extends BasicInfo {
         return language;
     }
 
-    //mutators(setters) for first name, last name, employer company and job
-    public void setFirstName(String changedFirstName) {
-        this.firstName = changedFirstName;
-    }
-
-    public void setLastName(String changedLastName) {
-        this.lastName = changedLastName;
-    }
+    //mutators(setters) for country and language
 
     public void setCountry(String changedCountry) {
         this.country = changedCountry;

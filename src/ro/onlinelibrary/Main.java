@@ -1,9 +1,9 @@
 package ro.onlinelibrary;
 
-import ro.onlinelibrary.library.Books;
-import ro.onlinelibrary.library.Events;
+import ro.onlinelibrary.library.Book;
+import ro.onlinelibrary.library.Event;
 import ro.onlinelibrary.library.OnlineLibrary;
-import ro.onlinelibrary.library.ServiceOnlineLibrary;
+import ro.onlinelibrary.service.ServiceOnlineLibrary;
 import ro.onlinelibrary.others.Address;
 import ro.onlinelibrary.people.Personnel;
 import ro.onlinelibrary.people.readers.Adult;
@@ -30,20 +30,20 @@ public class Main {
         Author ath3 = new Author("Miguel","Cervantes", "Romania", "Romanian");
         Author ath4 = new Author( "Gabriel García","Márquez", "Romania", "Romanian");
         Author ath5 = new Author("Francis Scott","Fitzgerald", "Romania", "Romanian");
-        Books b1 = new Books("In Search of Lost Time", ath1,1913, "modern literature",
+        Book b1 = new Book("In Search of Lost Time", ath1,1913, "modern literature",
                 "Swann's Way, the first part of A la recherche de temps perdu, Marcel Proust's seven-part cycle, was published in 1913. In it, Proust introduces the themes that run through the entire work.");
-        Books b2 = new Books("Ulysses", ath1, 1922, "fiction",
+        Book b2 = new Book("Ulysses", ath1, 1922, "fiction",
                 "Ulysses chronicles the passage of Leopold Bloom through Dublin during an ordinary day, June 16, 1904. The title parallels and alludes to Odysseus (Latinised into Ulysses), the hero of Homer's Odyssey.");
-        Books b3 = new Books("Don Quixote", ath3, 1605, "satire",
+        Book b3 = new Book("Don Quixote", ath3, 1605, "satire",
                 "Alonso Quixano, a retired country gentleman in his fifties, lives in an unnamed section of La Mancha with his niece and a housekeeper. He has become obsessed with books of chivalry, and believes their every word to be true, despite the fact that many of the events in them are clearly impossible. ");
-        Books b4 = new Books("One Hundred Years of Solitude", ath4, 1967, "fiction",
+        Book b4 = new Book("One Hundred Years of Solitude", ath4, 1967, "fiction",
                 "One of the 20th century's enduring works, One Hundred Years of Solitude is a widely beloved and acclaimed novel known throughout the world, and the ultimate achievement in a Nobel Prize–winning career. The novel tells the story of the rise and fall of the mythical town of Macondo through the history of the Buendía family.");
-        Books b5 = new Books("The Great Gatsby", ath5, 1925, "historical fiction",
+        Book b5 = new Book("The Great Gatsby", ath5, 1925, "historical fiction",
                 "The novel chronicles an era that Fitzgerald himself dubbed the \"Jazz Age\". Following the shock and chaos of World War I, American society enjoyed unprecedented levels of prosperity during the \"roaring\" 1920s as the economy soared.");
     // generate the address for the new library
         Address adr1 = new Address("Bucharest", "2000000", "Iuliu Maniu", 15);
     // generating a library in a certain city
-        Events event = new Events("Zilele portilor deschise", "O perpectiva unica si inovatoarea asupra bibliotecii moderne!", "22.04.2022");
+        Event event = new Event("Zilele portilor deschise", "O perpectiva unica si inovatoarea asupra bibliotecii moderne!", "22.04.2022");
         Personnel p1 = new Personnel("Ion", "Popescu", 2500, adr1);
         OnlineLibrary lib1 = new OnlineLibrary("Biblioteca Sector 6", adr1);
     // subscribing the readers to a library
@@ -80,7 +80,7 @@ public class Main {
         System.out.println("Books in random order: ");
         System.out.println(ServiceOnlineLibrary.showBooks(lib1));
         ServiceOnlineLibrary.orderBooksAlfa(lib1);
-        System.out.println("Books in random alpha-numerical: ");
+        System.out.println("Books in alpha-numerical order by title: ");
         System.out.println(ServiceOnlineLibrary.showBooks(lib1));
     // print the borrowing status for certain users
         System.out.println("Books borrowed: ");

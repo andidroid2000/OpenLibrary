@@ -1,5 +1,7 @@
 package ro.onlinelibrary.others;
 
+import java.util.Objects;
+
 public class Address {
     String city;
     String population;
@@ -43,5 +45,28 @@ public class Address {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return number == address.number && city.equals(address.city) && population.equals(address.population) && street.equals(address.street);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, population, street, number);
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", population='" + population + '\'' +
+                ", street='" + street + '\'' +
+                ", number=" + number +
+                '}';
     }
 }

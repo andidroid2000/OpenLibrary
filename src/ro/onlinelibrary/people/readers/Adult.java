@@ -3,6 +3,8 @@ package ro.onlinelibrary.people.readers;
 import ro.onlinelibrary.others.Address;
 import ro.onlinelibrary.people.BasicInfo;
 
+import java.util.Objects;
+
 public class Adult extends BasicInfo {
     private String employerCompany;
     private String job;
@@ -16,13 +18,6 @@ public class Adult extends BasicInfo {
     }
 
     //accessors(getters) for first name, last name, employer company and job
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
 
     public String getEmployerCompany() {
         return employerCompany;
@@ -32,14 +27,11 @@ public class Adult extends BasicInfo {
         return job;
     }
 
-    //mutators(setters) for first name, last name, employer company and job
-    public void setFirstName(String changedFirstName) {
-        this.firstName = changedFirstName;
+    public Address getAddress(){
+        return address;
     }
 
-    public void setLastName(String changedLastName) {
-        this.lastName = changedLastName;
-    }
+    //mutators(setters) employer company and job
 
     public void setEmployerCompany(String changedEmployerCompany) {
         this.employerCompany = changedEmployerCompany;
@@ -47,5 +39,33 @@ public class Adult extends BasicInfo {
 
     public void setJob(String changedJob) {
         this.job = changedJob;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Adult adult = (Adult) o;
+        return employerCompany.equals(adult.employerCompany) && job.equals(adult.job) && address.equals(adult.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employerCompany, job, address);
+    }
+
+    @Override
+    public String toString() {
+        return "Adult{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", employerCompany='" + employerCompany + '\'' +
+                ", job='" + job + '\'' +
+                ", address=" + address +
+                '}';
     }
 }
