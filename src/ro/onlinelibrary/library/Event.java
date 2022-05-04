@@ -37,6 +37,22 @@ public class Event {
         this.date = date;
     }
 
+    public int getDay()
+    {
+        String[] arrayDate = date.split("\\.");
+        return Integer.parseInt(arrayDate[0]);
+    }
+    public int getMonth()
+    {
+        String[] arrayDate = date.split("\\.");
+        return Integer.parseInt(arrayDate[1]);
+    }
+    public int getYear()
+    {
+        String[] arrayDate = date.split("\\.");
+        return Integer.parseInt(arrayDate[2]);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,5 +64,12 @@ public class Event {
     @Override
     public int hashCode() {
         return Objects.hash(name, description, date);
+    }
+
+    @Override
+    public String toString() {
+        return "\n\t<< " + name.toUpperCase() + " >>" +
+                "\n # Date: " + date +
+                "\n # Description:\n\t" + description;
     }
 }

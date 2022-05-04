@@ -43,11 +43,8 @@ public class Personnel extends BasicInfo{
 
     @Override
     public String toString() {
-        return "Personnel{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", salary=" + salary +
-                ", address=" + address +
-                '}';
+        return  firstName.toUpperCase() + " " + lastName.toUpperCase() +
+                "\n # Salary: " +  salary +
+                "\n # Address: " + getAddress().getCity() + ", " + getAddress().getStreet() + ", " + getAddress().getNumber() ;
     }
 }

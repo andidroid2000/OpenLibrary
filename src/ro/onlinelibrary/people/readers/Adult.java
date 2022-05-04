@@ -60,12 +60,8 @@ public class Adult extends BasicInfo {
 
     @Override
     public String toString() {
-        return "Adult{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", employerCompany='" + employerCompany + '\'' +
-                ", job='" + job + '\'' +
-                ", address=" + address +
-                '}';
+        return  firstName.toUpperCase() + " " + lastName.toUpperCase() +
+                "\n # Job details: works as " +  job.toUpperCase() + " at " + employerCompany.toUpperCase() +
+                "\n # Address: " + getAddress().getCity() + ", " + getAddress().getStreet() + ", " + getAddress().getNumber() ;
     }
 }
