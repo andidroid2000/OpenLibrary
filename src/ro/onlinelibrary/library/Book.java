@@ -78,13 +78,11 @@ public class Book implements Comparable<Book>{
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", publishingYear=" + publishingYear +
-                ", genre='" + genre + '\'' +
-                ", description='" + description + '\'' +
-                ", author=" + author +
-                '}';
+        return  "<< " + title.toUpperCase() + " >>" +
+                "\n # Author: " + author.getFirstName() + " " + author.getLastName() +
+                "\n # Genre: " + genre +
+                "\n # Publishing year: " + publishingYear +
+                "\n # Description:\n\t" + description;
     }
 
     @Override

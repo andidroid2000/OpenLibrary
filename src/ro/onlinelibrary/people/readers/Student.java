@@ -36,6 +36,14 @@ public class Student extends BasicInfo {
         this.year = changedYear;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,12 +59,8 @@ public class Student extends BasicInfo {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", school='" + school + '\'' +
-                ", year=" + year +
-                ", address=" + address +
-                '}';
+        return  firstName.toUpperCase() + " " + lastName.toUpperCase() +
+                "\n # Education: studies at " +  school.toUpperCase() + ", year: " + year +
+                "\n # Address: " + getAddress().getCity() + ", " + getAddress().getStreet() + ", " + getAddress().getNumber() ;
     }
 }
