@@ -1,6 +1,7 @@
 package ro.onlinelibrary.service;
 
 import ro.onlinelibrary.comparators.NameComparator;
+import ro.onlinelibrary.config.DatabaseConfig;
 import ro.onlinelibrary.exception.SpecialExceptions;
 import ro.onlinelibrary.library.Book;
 import ro.onlinelibrary.library.Event;
@@ -9,6 +10,8 @@ import ro.onlinelibrary.people.Author;
 import ro.onlinelibrary.people.Personnel;
 import ro.onlinelibrary.people.readers.Adult;
 import ro.onlinelibrary.people.readers.Student;
+import ro.onlinelibrary.repository.AddressRepository;
+import ro.onlinelibrary.repository.EventRepository;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -287,7 +290,9 @@ public class ServiceOnlineLibrary implements InterfaceOnlineLibrary {
                 System.out.println("\t*6* Plan an event");
                 System.out.println("\t*7* Register a reader");
                 System.out.println("\t*8* Upload an employee");
-                System.out.println("\t*9* Exit the menu");
+                System.out.println("\t*9* Event in database");
+                System.out.println("\t*10* Addresses");
+                System.out.println("\t*11* Exit the menu");
 
                 try {
                     System.out.println(" #Insert the number of the option:");
@@ -410,6 +415,90 @@ public class ServiceOnlineLibrary implements InterfaceOnlineLibrary {
                     addPersonnel(scanner, audit);
                     break;
                 case (9):
+                    EventRepository eventRepository = new EventRepository();
+                    //CREATE
+                    eventRepository.createTable();
+                    //INSERT
+                    System.out.println("\tName:");
+                    String name = scanner.nextLine();
+                    System.out.println("\tDescription:");
+                    String description = scanner.nextLine();
+                    System.out.println("\tDate:");
+                    String date = scanner.nextLine();
+                    eventRepository.insert(name, description, date);
+                    //SELECT
+                    eventRepository.select();
+                    //UPDATE
+                    System.out.println("\tName:");
+                    String name1 = scanner.nextLine();
+                    System.out.println("\tId:");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    eventRepository.update(id, name1);
+                    //SELECT
+                    eventRepository.select();
+                    //DELETE
+                    System.out.println("\tId:");
+                    int id1 = scanner.nextInt();
+                    scanner.nextLine();
+                    eventRepository.delete(id1);
+                    //SELECT
+                    eventRepository.select();
+                    DatabaseConfig.closeDatabaseConfiguration();
+                    break;
+                case (10):
+                    int option6;
+                    AddressRepository addressRepository = new AddressRepository();
+                    addressRepository.createTable();
+                    while(true)
+                    {
+                        System.out.println(" #Addresses:");
+                        System.out.println("\t*1* Add address");
+                        System.out.println("\t*2* Update address");
+                        System.out.println("\t*3* Delete address");
+                        System.out.println("\t*4* Show addresses");
+                        try {
+                            System.out.println(" #Insert the number of the option:");
+                            option6 = scanner.nextInt();
+                            scanner.nextLine();
+                            break;
+                        } catch (Exception exception) {
+                            scanner.nextLine();
+                            System.out.println("\tOptions are between 1 and 4!");
+                        }
+                    }
+                    switch (option6) {
+                        case (1):
+                            System.out.println("\tCity:");
+                            String city = scanner.nextLine();
+                            System.out.println("\tStreet:");
+                            String street = scanner.nextLine();
+                            System.out.println("\tNumber:");
+                            String number = scanner.nextLine();
+                            addressRepository.insert(city, street, number);
+                            DatabaseConfig.closeDatabaseConfiguration();
+                            break;
+                        case (2):
+                            System.out.println("\tId to update:");
+                            int id6 = scanner.nextInt();
+                            scanner.nextLine();
+                            System.out.println("\tNew city:");
+                            String newCity = scanner.nextLine();
+                            addressRepository.update(id6, newCity);
+                            break;
+                        case (3):
+                            System.out.println("\tId to delete:");
+                            int id7 = scanner.nextInt();
+                            scanner.nextLine();
+                            addressRepository.delete(id7);
+                            break;
+                        case (4):
+                            addressRepository.select();
+                            break;
+                    }
+                    DatabaseConfig.closeDatabaseConfiguration();
+                    break;
+                case (11):
                     System.out.println(" #MENU CLOSED");
                     return;
             }

@@ -5,6 +5,7 @@ import ro.onlinelibrary.people.Author;
 import java.util.Objects;
 
 public class Book implements Comparable<Book>{
+    protected Integer id;
     protected String title;
     protected int publishingYear;
     protected String genre;
@@ -19,7 +20,32 @@ public class Book implements Comparable<Book>{
         this.author = author;
     }
 
-   public Book() {
+    public Book(Integer id, String title, int publishingYear, String genre, String description, Author author) {
+        this.id = id;
+        this.title = title;
+        this.publishingYear = publishingYear;
+        this.genre = genre;
+        this.description = description;
+        this.author = author;
+    }
+
+    public Book(Integer id, String title, int publishingYear, String genre, String description) {
+        this.id = id;
+        this.title = title;
+        this.publishingYear = publishingYear;
+        this.genre = genre;
+        this.description = description;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Book() {
         this.title = null;
         this.publishingYear = 0;
         this.genre = null;

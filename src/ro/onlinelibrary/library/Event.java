@@ -3,14 +3,30 @@ package ro.onlinelibrary.library;
 import java.util.Objects;
 
 public class Event {
+    private Integer id;
     private String name;
     private String description;
     private String date;
+
+    public Event(Integer id, String name, String description, String date) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.date = date;
+    }
 
     public Event(String name, String description, String date) {
         this.name = name;
         this.description = description;
         this.date = date;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -3,16 +3,32 @@ package ro.onlinelibrary.others;
 import java.util.Objects;
 
 public class Address {
+    private Integer id;
     String city;
     String population;
     String street;
     int number;
+
+    public Address(Integer id, String city, String street, int number) {
+        this.id = id;
+        this.city = city;
+        this.street = street;
+        this.number = number;
+    }
 
     public Address(String city, String population, String street, int number) {
         this.city = city;
         this.population = population;
         this.street = street;
         this.number = number;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCity() {
