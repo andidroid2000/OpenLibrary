@@ -1,42 +1,52 @@
-# Online Library - etapa I
+# OpenLibrary
 
-## Descriere
- Online Library este o aplicație în Java creată cu scopul digitalizării bibliotecilor din România. 
- 
-### Clase:
- Aplicația este construită în jurul a 8 clase structurate pe domenii precum utilizatorilori, biblitecă și diverse :
- - pachetul People:
-      - pachetul Readers: cele două tipuri de cititori
-         - clasa Adult
-         - clasa Student
-      - clasa Authors
-      - clasa Personnel
- - pachetul Library: detalii despre organizarea bibliotecii
-      - clasa OnlineLibrary: prin ea se instanțiază bibliotecile cu toate cele necesare(users, cărți, personal etc.)
-      - clasa Books
-      - clasa Events
- - pachetul Others:
-      - clasa Address
- 
- Clasa OnlineLibrary reprezintă scheletul aplicației, fiind echivalentul unei biblioteci reale. În ea se vor regăsi detalii despre cititori (Adult & Student), cărțile disponibile (Books, prin care se include și clasa Author), personal (Personnel), evenimente viitoare (Events) și localizarea sediului fizic (Address), fiind totdoată și mediul de unde vor fi realizate interogările aplicației (prin serviciul său). 
- 
-### Interogări:
- Pentru început, aplicația are următoarele funționalități:
- - adăugarea unui cititor(addReader)
- - adaugarea unei cărți în colecția bibliotecii (addBook)
- - adăugarea unui angajat în cadrul bibliotecii (addEmployee)
- - adăugarea unui eveniment în bibliotecă (addEvent)
- - înființarea unei bibliteci (generateLibrary)
- - împrumutarea unei cărți (borrowsBook)
- - interogarea unui cititor despre cărțile împrumutate (borrowedBooks)
- - afișarea cititorilor unei biblioteci împărțiti în cele 2 grupuri principale: Aduly și Student (showReaders)
- - afișarea cărților dintr-o biblitoecă (showBooks)
- - ordonarea cărților alfabetic (orderBooksAlfa)
- - afișarea autorilor din colecția biblitecii (showAuthors)  
- 
-## Obiective:
+### Description
 
-Principalele obiective care se urmăresc prin implementarea acestui proiect sunt:
- - renunțarea la mediile de stocare învechite (registre, condici), prin trecerea către un mediu online de stocare, valabil la nivel național
- - reducerea procesului birocartic întâlnit la împrumuturi, gestionarea stocului de cărți, înscrierea unei persoane ca cititor într-o bibliotecă etc.
- - încurajarea persoanelor să descopere lectura prin facilitarea accesului acestora către biblioteci
+---
+
+OpenLibrary is a Java application created with the aim of digitizing libraries in Romania. 
+
+### Reasoning behind the app 
+
+---
+
+The main objectives pursued through the implementation of this project are:
+ - abandoning outdated storage media (registers, conditions), by switching to an online storage medium, valid at national level;
+ - reducing the bureaucratic process (loans, book stock management, registering a person as a reader in a library etc.);
+ - encouraging people to discover reading by facilitating their access to libraries.
+
+### Structure
+
+---
+
+The application is built around 8 classes structured by domains such as users, library and various:
+ - package People:
+      - package Readers - 2 subtypes
+         - class Adult
+         - class Student
+      - class Authors
+      - class Personnel
+ - package Library - details about the organization of the library
+      - class OnlineLibrary: through it the libraries are instantiated with everything necessary (users, books, staff, etc.)
+      - class Books
+      - class Events
+ - package Others:
+      - class Address
+ 
+The OnlineLibrary class represents the skeleton of the application, being the equivalent of a real library. In it you will find details about the readers (Adult & Student), the available books (Books, which also includes the Author class), personnel (Personnel), future events (Events) and the location of the physical headquarters (Address), being also the environment from where the application's queries will be made (via its service).
+ 
+### Actions
+
+---
+
+ - `generateLibrary` -> creating a library 
+ - `addReader` -> adds a reader 
+ - `addBook` -> adds a book to the library collection 
+ - `addEmployee` -> adds an employee to the library 
+ - `addEvent` -> adds an event to the library 
+ - `borrowsBook` -> user borrows a book 
+ - `borrowedBooks` -> a reader's query about borrowed books 
+ - `showReaders` -> displaying the readers of a library divided into the 2 main groups: Adults and Students 
+ - `showBooks` -> displaying books from a library 
+ - `orderBooksAlfa` -> order books alphabetically 
+ - `showAuthors` -> displaying authors from the library collection 
